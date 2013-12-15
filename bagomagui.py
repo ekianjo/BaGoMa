@@ -9,5 +9,16 @@ password=PyZenity.GetText("Please provide your password",password=True)
 proceed=PyZenity.Question("Ok to proceed right now?")
 
 if proceed==True:
-  cmd="python 
-  subprocess.Popen(
+  cmd="python bagoma.py -e {0} -p {1}".format(login,password)
+  print cmd
+  process = subprocess.Popen(cmd, shell=False,
+                           stdout=subprocess.PIPE, 
+                           stderr=subprocess.PIPE)
+  while process.stdout<>"":
+    print stdout
+
+else:
+  exit
+  
+  
+
