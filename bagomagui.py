@@ -13,7 +13,7 @@ def Run(command):
 
 def Exiting(message):
     if message=="":
-	    a=PyZenity.InfoMessage("You decided not to proceed at this point. Exiting Now")
+    	a=PyZenity.InfoMessage("You decided not to proceed at this point. Exiting Now")
     else:
     	a=PyZenity.InfoMessage("{0}".format(message))
     exit
@@ -66,10 +66,10 @@ proceed=PyZenity.Question("Ok to proceed right now?")
 if proceed==True:
     cmd="./bagoma.py -e {0} -p {1}".format(login,password)
     print cmd
-    if directory!="None"
+    if directory!="None":
     	command=["python","bagoma.py","-e",login,"-p",password,"-d",directory]
     else:
-	    command=["python","bagoma.py","-e",login,"-p",password]
+    	command=["python","bagoma.py","-e",login,"-p",password]
 else:
     Exiting("You decided not to proceed at this point. Exiting Now")
     
