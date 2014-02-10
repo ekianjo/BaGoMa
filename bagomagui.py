@@ -56,12 +56,20 @@ password=PyZenity.GetText("Please provide your password",password=True)
 if password=="None":
     Exiting("You failed to provide any password. Exiting Now.")
 
+directory=PyZenity.GetDirectory(multiple=False,"Select directory to download your emails")
+if directory=="None":
+    a=PyZenity.InfoMessage("You dit not select any directory. BaGoMa will use the working folder as default")
+    
+
 proceed=PyZenity.Question("Ok to proceed right now?")
 
 if proceed==True:
     cmd="./bagoma.py -e {0} -p {1}".format(login,password)
     print cmd
-    command=["python","bagoma.py","-e",login,"-p",password]
+    if directory!="None"
+    	command=["python","bagoma.py","-e",login,"-p",password,"-d",directory]
+    else:
+	    command=["python","bagoma.py","-e",login,"-p",password]
 else:
     Exiting("You decided not to proceed at this point. Exiting Now")
     
